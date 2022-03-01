@@ -1,0 +1,41 @@
+// vscode 插件
+{
+  "vue3-template": {
+    "scope": "vue,vue-html", // 生成的模版
+    "prefix": "tvue3", // 缩写
+		"description": "vue3-template", // 在文件中输入完prefix时候，弹出此内容
+    "body": [ // string[] 片段的完整内容，每个string代表一行
+      "<template lang=\"pug\">",
+      "div.page-content",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "import {",
+      "\tref,",
+      "\tdefineComponent,",
+      "\tgetCurrentInstance,",
+      "\tonMounted",
+      "} from 'vue'",
+      "import { useStore } from 'vuex'",
+      "import { useRouter } from 'vue-router'",
+      "export default defineComponent({",
+      "\tname: '',",
+      "\tsetup () {",
+      "\t\tconst store = useStore()",
+      "\t\tconst router = useRouter()",
+      "\t\tconst instance = getCurrentInstance()",
+      "\t\tonMounted(() => {",
+      "\t\t\tconsole.log('onMounted', store, router, instance)",
+      "\t\t})",
+      "\t\treturn {}",
+      "\t}",
+      "})",
+      "</script>",
+      "",
+      "<style lang=\"stylus\" scoped>",
+      ".page-content",
+      "\tbackground #fff",
+      "</style>"
+    ],
+  }
+}
