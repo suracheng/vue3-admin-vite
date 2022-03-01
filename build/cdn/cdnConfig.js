@@ -1,6 +1,5 @@
 
-// cdn配置项
-// 公共
+// 公共 cdn配置项
 const cdnConfig = {
   externals: {
     vue: 'Vue',
