@@ -1,7 +1,17 @@
 # Vue 3 + Typescript + Vite
+
+
+### 项目创建
 - 使用 `yarn create vite vue3-admin --template vue` 创建项目
 - 添加 tsconfig `npx tsc --init`
 
+
+### 运行
+```bash
+yarn install
+
+yarn dev
+```
 
 ### commitlint
 ```bash
@@ -21,7 +31,6 @@ module.exports = {
 ```
 
 ### husky 配置
-TODO
 ```bash
 # 安装husky
 npm i husky -D
@@ -39,7 +48,5 @@ yarn husky add .husky/pre-commit 'npx --no-install lint-staged'
 # --no-install 参数表示强制npx使用项目本地安装的commitlint 和 lint-staged npm包
 ```
 
-
-#### vite 配置按需加载UI组件
-
-#### src 下对.vue文件进行全局模块声明
+#### vite 配置
+- [参考文章](https://vitejs.cn/config/#config-file-resolving)

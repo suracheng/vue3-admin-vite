@@ -12,13 +12,13 @@ import {
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 export default defineComponent({
-  name: '',
+  name: 'TabMenu',
   setup () {
     const store = useStore()
     const router = useRouter()
     const instance = getCurrentInstance()
     onMounted(() => {
-      console.log('onMounted', store, router, instance)
+      // console.log('onMounted', store, router, instance)
     })
     return {}
   }

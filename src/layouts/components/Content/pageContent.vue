@@ -8,7 +8,6 @@ import {
   ref,
   defineComponent,
   getCurrentInstance,
-  onMounted
 } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
@@ -18,9 +17,7 @@ export default defineComponent({
     const store = useStore()
     const router = useRouter()
     const instance = getCurrentInstance()
-    onMounted(() => {
-      console.log('onMounted', store, router, instance)
-    })
+
     return {}
   }
 })

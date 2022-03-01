@@ -11,8 +11,9 @@ div.menu-list
       :default-active="showActive"
       :unique-opened='true'
       :default-openeds = "openeds"
-      :collapse="navCollapse")
-      pageSideBarItem(:routes="routeMap")
+      :collapse="navCollapse"
+    )
+      page-side-bar-item(:routes="routeMap")
 </template>
 
 <script lang="ts">
@@ -24,11 +25,12 @@ import {
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { devRouteMap } from '@/routers/router'
-import pageSideBarItem from './pageSideBarItem.vue'
+import PageSideBarItem from './pageSideBarItem.vue'
+
 export default defineComponent({
-  name: '',
+  name: 'PageSideBar',
   components: {
-    pageSideBarItem
+    PageSideBarItem
   },
   setup () {
     const store = useStore()

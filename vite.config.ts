@@ -11,7 +11,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { getCdnList } from './build/cdn/cdn'
 import { isProduction } from './build/utils'
 
-
 const cdn = getCdnList()
 const path = require('path')
 
@@ -21,7 +20,7 @@ function resolve (dir) {
 
 // 处理html模版中需要的外链文件
 function handleScript () {
-  const scripts = []
+  const scripts: string[] = []
 
   Object.entries(cdn).forEach(([key, value]: any) => {
     if (['css', 'js'].includes(key)) {

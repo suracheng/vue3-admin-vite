@@ -16,24 +16,21 @@ import {
 import { useRoute, RouteRecordName } from 'vue-router'
 import { useStore } from 'vuex'
 import * as BaseTypes from '@/stores/base-type'
+
 export default defineComponent({
-  name: '',
+  name: 'PageHeader',
   setup () {
     const route = useRoute()
     const store = useStore()
     // 自动页面title
-    const title = computed<RouteRecordName>(() => {
-      return route.name || ''
-    })
-    const userName = computed<string>(() => {
-      return store.state.userStore.name
-    })
-    const navCollapse = computed<boolean>(() => {
-      return store.state.baseStore.control.navCollapse
-    })
-    function toggleMenuCollpase () : void {
+    const title = computed<RouteRecordName>(() => route.name || '')
+    const userName = computed<string>(() => store.state.userStore.name)
+    const navCollapse = computed<boolean>(() => store.state.baseStore.control.navCollapse)
+
+    const toggleMenuCollpase = () => {
       store.commit('baseStore/' + BaseTypes.CONTROLL_NAV_COLLAPSE)
     }
+
     return {
       title,
       userName,
