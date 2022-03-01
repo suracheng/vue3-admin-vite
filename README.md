@@ -40,6 +40,6 @@ yarn husky add .husky/pre-commit 'npx --no-install lint-staged'
 ```
 
 
-### vite 配置按需加载UI组件
+#### vite 配置按需加载UI组件
 
-### src 下对.vue文件进行全局模块声明
+#### src 下对.vue文件进行全局模块声明
