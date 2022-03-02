@@ -87,16 +87,7 @@ export default defineConfig({
         data: {
           title: 'vue3 template',
           injectScript: handleScript(),
-        },
-        // tags: [
-        //   {
-        //     injectTo: 'body-prepend',
-        //     tag: 'div',
-        //     attrs: {
-        //       id: 'tag',
-        //     },
-        //   },
-        // ],
+        }
       },
     }),
 
@@ -119,4 +110,6 @@ export default defineConfig({
     // 非生产环境下开启 sourcemap 调试
     sourcemap: !isProduction ? true : false
   }
+
+  // TODO 本地添加自研插件
 })

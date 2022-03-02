@@ -11,8 +11,10 @@
   "dependencies": {
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
+    "@types/nprogress": "^0.2.0",
     "axios": "^0.26.0",
     "element-plus": "^2.0.2",
+    "nprogress": "^0.2.0",
     "stylus": "^0.56.0",
     "vite-plugin-pug": "^0.3.0",
     "vue": "^3.2.25",
@@ -31,7 +33,8 @@
     "vite-plugin-html": "^3.1.0",
     "vite-plugin-resolve-externals": "^0.1.0",
     "vite-plugin-style-import": "^2.0.0",
-    "vue-tsc": "^0.29.8"
+    "vue-tsc": "^0.29.8",
+    "vuex-persistedstate": "^4.1.0"
   },
   "husky": {
     "hooks": {

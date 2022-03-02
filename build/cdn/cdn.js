@@ -21,8 +21,7 @@ function getEnvironmentCode () {
     } else if (branch === 'master') {
       environmentCode = 'master'
     } else {
-      // 匹配不到安装release
-      // TODO 要协商git规范
+      // TODO 协商git规范
       environmentCode = 'uat'
     }
   }
@@ -40,7 +39,6 @@ export function getCdnList () {
   const env = getEnvironmentCode()
   // 合并配置 cdnConfig, devCdnConfig
   cdn.externals = Object.assign(cdnConfig.externals, devCdnConfig.externals)
-  // dev去合并prd
   cdn.js = devCdnConfig.js.concat(cdnConfig.js)
   cdn.css = devCdnConfig.css.concat(cdnConfig.css)
   // 去重
@@ -52,8 +50,7 @@ export function getCdnList () {
   // 环境替换
   cdn.js.forEach(item => {
     if (item.url) {
-      // 进行环境替换
-      item.url = item.url.replace('$ENV$', env)
+      item.url = item.url.replace('$ENV$', env) // 进行环境变量替换
     }
   })
 
