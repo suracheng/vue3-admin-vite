@@ -16,7 +16,8 @@ import {
   computed,
   defineComponent
 } from 'vue'
-import { useStore } from 'vuex'
+// import { useStore } from 'vuex'
+import { useStore } from '@/stores'
 export default defineComponent({
   name: '',
   components: {
@@ -32,7 +33,7 @@ export default defineComponent({
     const store = useStore()
     const getStyle = computed<styleObj>(() => {
       return {
-        minWidth: store.state.baseStore.control.navCollapse ? '' : '240px',
+        minWidth: store.state.base.control.navCollapse ? '' : '240px',
         backgroundColor: '#304156'
       }
     })

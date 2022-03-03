@@ -14,7 +14,7 @@ import {
   computed
 } from 'vue'
 import { useRoute, RouteRecordName } from 'vue-router'
-import { useStore } from 'vuex'
+import { useStore } from '@/stores'
 import * as BaseTypes from '@/stores/base-type'
 
 export default defineComponent({
@@ -24,8 +24,8 @@ export default defineComponent({
     const store = useStore()
     // 自动页面title
     const title = computed<RouteRecordName>(() => route.name || '')
-    const userName = computed<string>(() => store.state.userStore.name)
-    const navCollapse = computed<boolean>(() => store.state.baseStore.control.navCollapse)
+    const userName = computed<string>(() => store.state.user.name)
+    const navCollapse = computed<boolean>(() => store.state.base.control.navCollapse)
 
     const toggleMenuCollpase = () => {
       store.commit('baseStore/' + BaseTypes.CONTROLL_NAV_COLLAPSE)

@@ -22,9 +22,9 @@ import {
   defineComponent,
   computed
 } from 'vue'
-import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { devRouteMap } from '@/routers/router'
+import { useStore } from '@/stores'
 import PageSideBarItem from './pageSideBarItem.vue'
 
 export default defineComponent({
@@ -35,18 +35,19 @@ export default defineComponent({
   setup () {
     const store = useStore()
     const router = useRouter()
-    const logo = ref(store.state.logo)
-    const useDevRoute = ref(store.state.useDevRoute)
+    const logo = ref(store.state.base.logo)
+    const useDevRoute = ref(store.state.base.useDevRoute)
     const routeMap = ref(devRouteMap)
     if (useDevRoute.value) {
       console.log('这里使用线上请求回来的路由')
       // routeMap = 线上路由，但是结构必须一致
     }
     const navCollapse = computed<boolean>(() => {
-      return store.state.baseStore.control.navCollapse
+      return store.state.base.control.navCollapse
     })
     const showActive = ref('') // 记录当前打开菜单id
     const openeds = ref<Array<string>>([])
+
     function handleSelect (index : string, indexPath: Array<string>) {
       console.log('handleSelect', index, indexPath)
       router.push({

@@ -9,8 +9,9 @@ import {
   defineComponent,
   getCurrentInstance,
 } from 'vue'
-import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+import { useStore } from '@/stores'
+
 export default defineComponent({
   name: '',
   setup () {

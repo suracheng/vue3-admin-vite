@@ -9,8 +9,10 @@ import {
   getCurrentInstance,
   onMounted
 } from 'vue'
-import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+
+import { useStore } from '@/stores'
+
 export default defineComponent({
   name: 'TabMenu',
   setup () {
