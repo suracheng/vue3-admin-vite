@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 
 import App from './App.vue'
 import router from './routers/router'
-import store from './stores'
+import store, { key } from './stores'
 import { installPlugins } from './plugins/install'
 
 // 添加基础公共样式
@@ -23,6 +23,6 @@ installPlugins(app)
 // }
 
 app
-.use(store)
+.use(store, key)
 .use(router)
 .mount('#app')

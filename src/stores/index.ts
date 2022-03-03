@@ -52,6 +52,7 @@ export default createStore<IRootState>({
   }
 })
 
+// https://vuex.vuejs.org/zh/guide/typescript-support.html
 export const key: InjectionKey<Store<IRootState>> = Symbol()
 
 // 定义自己的 `useStore` 组合式函数
